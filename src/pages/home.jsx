@@ -1,3 +1,6 @@
+import React from "react";
+import { Form, Button } from "react-bootstrap";
+
 export const Home = () => {
   return (
     <div
@@ -6,13 +9,20 @@ export const Home = () => {
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
+        height: "50vh"
       }}
     >
       <div>
         <h1>Camisa</h1>
-        <input
-          style={{ height: "25px", borderRadius: "25px", width: "35vw" }}
-        ></input>
+        <Form className="d-flex">
+                <Form.Control
+                  type="search"
+                  placeholder="Search"
+                  className="me-2"
+                  aria-label="Search"
+                />
+                <Button variant="outline-success">Search</Button>
+              </Form>
         <div>
           <button>Google Search</button>
           <button>Download Resume</button>
