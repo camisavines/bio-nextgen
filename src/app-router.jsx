@@ -1,23 +1,19 @@
 import * as React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import { Home } from "./pages";
-import {Navbar} from "./components"
-import ErrorPage from "./components/Error/error-page";
+import { Navbar } from "./components";
+import "./index.css"
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-      errorElement: <ErrorPage />
-    },
-  ]);
-
   return (
     <>
-    <Navbar />
-      <RouterProvider router={router} />
+      <HashRouter>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+        </Routes>
+      </HashRouter>
     </>
   );
 }
