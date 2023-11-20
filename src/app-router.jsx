@@ -1,20 +1,25 @@
 import * as React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 
-import { Home } from "./pages";
+import { Home, ComingSoon } from "./pages";
 import { Navbar } from "./components";
-import "./index.css"
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const maintainence = false;
   return (
     <>
-      <HashRouter>
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-        </Routes>
-      </HashRouter>
+      {maintainence ? (
+        <ComingSoon />
+      ) : (
+        <HashRouter>
+          <Navbar />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+          </Routes>
+        </HashRouter>
+      )}
     </>
   );
 }
