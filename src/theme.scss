@@ -1,0 +1,60 @@
+// Light Theme
+$theme-light-bg: #f1f5f2;
+$theme-light-color: black;
+$theme-light-accent: #ef8354;
+$theme-light-accent-2: #f5b498;
+$theme-light-footer-bg: #e4e4e4;
+
+// Dark Theme
+$theme-dark-bg: #202124;
+$theme-dark-color: #f2f4f3;
+$theme-dark-accent: #448bff;
+// $theme-dark-accent: #A9927D;
+$theme-dark-accent-2: #53503f;
+$theme-dark-footer-bg: #111;
+
+// -------------------------------------------------------
+// -------------------------------------------------------
+
+.theme-light {
+  background-color: $theme-light-bg;
+  color: $theme-light-color;
+  transition: 1s;
+
+  .tl-title {
+    color: $theme-light-accent;
+  }
+  .tl-dot {
+    border: 5px solid $theme-light-accent;
+    height: 25px;
+    width: 25px;
+    margin-left: -10px;
+    margin-right: 20px;
+  }
+  .tl-border {
+    border-left: 5px solid $theme-light-accent;
+  }
+}
+
+
+
+.theme-dark {
+  background-color: $theme-dark-bg;
+  color: $theme-dark-color;
+  transition: 1s;
+
+  .tl-title {
+    color: $theme-dark-accent;
+  }
+  .tl-dot {
+    border: 5px solid $theme-dark-accent;
+    height: 25px;
+    width: 25px;
+    margin-left: -10px;
+    margin-right: 20px;
+  }
+  .tl-border {
+    border-left: 5px solid $theme-dark-accent;
+  }
+}
+

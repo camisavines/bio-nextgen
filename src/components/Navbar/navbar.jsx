@@ -12,21 +12,21 @@ import {
 } from "react-bootstrap";
 import * as AiIcons from "react-icons/ai";
 import * as CgIcons from "react-icons/cg";
-import * as FaIcons from "react-icons/fa"
-import * as MdIcons from "react-icons/md"
+import * as FaIcons from "react-icons/fa";
+import * as MdIcons from "react-icons/md";
+import me from "../../photos/header.jpg";
 
 import { SidebarData, ContactData } from "./navdata";
-import "./navbar.css"
+import "./navbar.css";
 
-export const MyNavbar = () => {
-  const [theme, setTheme] = useState("light");
+export const MyNavbar = ({ theme, setTheme }) => {
   const toggleTheme = () => {
     if (theme === "light") {
-      setTheme("dark")
+      setTheme("dark");
     } else {
-      setTheme("light")
+      setTheme("light");
     }
-  }
+  };
 
   return (
     <>
@@ -63,7 +63,7 @@ export const MyNavbar = () => {
                     style={{ minWidth: "300px", overflowY: "scroll" }}
                   >
                     <div style={{ width: "100%" }}>
-                      <Row style={{padding: "1rem 2rem"}}>
+                      <Row style={{ padding: "1rem 2rem" }}>
                         {SidebarData.map((item) => (
                           <Col
                             xs={4}
@@ -82,7 +82,7 @@ export const MyNavbar = () => {
 
                       <Dropdown.Divider />
 
-                      <Row style={{padding: "1rem 2rem"}}>
+                      <Row style={{ padding: "1rem 2rem" }}>
                         {ContactData.map((item) => (
                           <Col
                             xs={6}
@@ -98,27 +98,57 @@ export const MyNavbar = () => {
                           </Col>
                         ))}
                       </Row>
-
                     </div>
                   </Dropdown.Menu>
                 </Dropdown>
 
-                <NavLink href="/projects" className="d-lg-none">Projects</NavLink>
-                <NavLink href="/resume" className="d-lg-none">Resume</NavLink>
-                <NavLink href="/news" className="d-lg-none">News</NavLink>
-                <NavLink href="/store" className="d-lg-none">Store</NavLink>
+                <NavLink href="/projects" className="d-lg-none">
+                  Projects
+                </NavLink>
+                <NavLink href="/resume" className="d-lg-none">
+                  Resume
+                </NavLink>
+                <NavLink href="/news" className="d-lg-none">
+                  News
+                </NavLink>
+                <NavLink href="/store" className="d-lg-none">
+                  Store
+                </NavLink>
 
-                <hr/>
+                <hr />
 
-                <NavLink href="https://www.linkedin.com/in/camisavines" className="d-lg-none"><FaIcons.FaLinkedin size={20} />LinkedIn</NavLink>
-                <NavLink href="https://www.github.com/camisavines" className="d-lg-none">Github</NavLink>
+                <NavLink
+                  href="https://www.linkedin.com/in/camisavines"
+                  className="d-lg-none"
+                >
+                  <FaIcons.FaLinkedin size={20} />
+                  LinkedIn
+                </NavLink>
+                <NavLink
+                  href="https://www.github.com/camisavines"
+                  className="d-lg-none"
+                >
+                  Github
+                </NavLink>
 
-                <hr/>
+                <hr />
 
-                <NavLink onClick={toggleTheme}>{theme === "light" ? <MdIcons.MdLightMode /> : <MdIcons.MdDarkMode />}<span className="d-lg-none px-2">Theme</span></NavLink>
-
-
-
+                <NavLink onClick={toggleTheme}>
+                  {theme === "light" ? (
+                    <MdIcons.MdLightMode />
+                  ) : (
+                    <MdIcons.MdDarkMode />
+                  )}
+                  <span className="d-lg-none px-2">Theme</span>
+                </NavLink>
+                <NavLink href="/projects" className="d-none d-lg-block">
+                  <img
+                    src={me}
+                    width={30}
+                    height={30}
+                    style={{ borderRadius: 30 }}
+                  />
+                </NavLink>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

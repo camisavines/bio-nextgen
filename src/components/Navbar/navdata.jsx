@@ -6,12 +6,6 @@ import * as IoIcons from 'react-icons/io';
 import * as MdIcons from 'react-icons/md';
 
 export const SidebarData = [
-  // {
-  //   title: 'Home',
-  //   path: '/',
-  //   icon: <AiIcons.AiFillHome size={30} />,
-  //   cName: 'nav-text'
-  // },
   {
     title: 'Projects',
     path: '/projects',
